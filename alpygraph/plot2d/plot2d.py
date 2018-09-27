@@ -47,6 +47,7 @@ class Plot2D():
         self._evalkwargs(kwargs)
         im  = plt.imshow(image, origin='lower', interpolation='none', aspect='auto', **kwargs)
         self._cb = self._colorbar(im)
+    
     def hexabin(self, x, y, z=None, nbin=100, mincnt=1, bins=None, **kwargs):
         """ Make a 2D histogram with hexagonal pixels
             
@@ -72,6 +73,7 @@ class Plot2D():
         self._labels()
         plt.show()
         return
+    
     def save(self, name=None):
         self._labels()
         if name is None:
@@ -93,6 +95,7 @@ class Plot2D():
         divider = make_axes_locatable(ax)
         cax = divider.append_axes("right", size=0.15, pad=0.2)
         return fig.colorbar(mappable, cax=cax)
+    
     def _labels(self):
         self._ax.set_title(r'{}'.format(self.title))
         self._ax.set_xlabel(r'{}'.format(self.xlabel))
@@ -103,6 +106,7 @@ class Plot2D():
         if len(labels) != 0:
             self._ax.legend()
         return
+    
     def _evalkwargs(self, kwargs):
         for key, value in kwargs.items():
             if   key == 'xlabel': self.xlabel = value
