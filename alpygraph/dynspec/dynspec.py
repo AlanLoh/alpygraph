@@ -12,7 +12,7 @@ import numpy as np
 
 from astropy.time import Time
 
-from ..plot2d import Plot2D 
+from ..Plot2d import plot2d
 
 __author__ = 'Alan Loh'
 __copyright__ = 'Copyright 2018, alpygraph'
@@ -28,8 +28,8 @@ __all__ = ['DynSpec']
 class DynSpec():
 
     def __init__(self, dynspec=None, time=None, frequency=None):
-        self.dynspec = dynspec
-        self.time = time
+        self.dynspec   = dynspec
+        self.time      = time
         self.frequency = frequency
 
     # ================================================================= #
@@ -50,6 +50,7 @@ class DynSpec():
         else:
             self._dynspec = ds
             return
+    
     @property
     def frequency(self):
         """ Frequency, 1D array of floats
@@ -66,6 +67,7 @@ class DynSpec():
         else:
             self._frequency = f
             return
+    
     @property
     def time(self):
         """ Time, 1D array of floats or time objects
@@ -88,7 +90,7 @@ class DynSpec():
     def useme(self):
         image = np.random.rand(100, 50)
 
-        dspec = Plot2D()
+        dspec = plot2d.Plot2D()
         dspec.imshow(image)
         dspec.show()
         return

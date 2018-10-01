@@ -1,4 +1,6 @@
-from .dynspec.dynspec import *
-from .plot1d.plot1d import *
-from .plot2d.plot2d import *
-from .tools.mpl_params import *
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from .Tools.mpl_params import *
+
+__all__ = ['plot1d', 'plot2d']
